@@ -23,7 +23,6 @@ app.get('/api/whoami', function(req, res) {
 	   software: software,
 	}
 	
-	console.log(req);
 	res.json(result);
 });
 
