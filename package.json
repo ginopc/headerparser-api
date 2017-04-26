@@ -1,0 +1,24 @@
+{
+  "name": "headerparser-api",
+  "version": "1.0.0",
+  "description": "Header Parse project for FreeCodeCamp learning path",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/ginopc/headerparser.git"
+  },
+  "keywords": [
+    "freecodecamp",
+    "learning",
+    "nodejs"
+  ],
+  "author": "Maurizio Aru",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ginopc/headerparser/issues"
+  },
+  "homepage": "https://github.com/ginopc/headerparser#readme"
+}
