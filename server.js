@@ -1,21 +1,26 @@
+/**
+ *   Header Parser microservice
+ *
+ *   author  : Maurizio Aru (http://www.ginopc.it)
+ *   created : 2017.04.26
+ */
 var express = require('express');
 var app = express();
-var path = require('path');
 var PORT = process.env.PORT || 8080;
-
-// define static pages
-app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/', function(req, res) {
    res.end('Header Parser microservice - by Maurizio Aru');
 });
 
 app.get('/api/whoami', function(req, res) {
+  var address = req.headers['x-forwarded-for'] || req.connection.remoteAddress
+  var language = req.acceptsLanguages();
+  var software = req.headers['user-agent'].split('(')[1].split(')')[0]
 
 	var result = {
-	   address: req.headers['x-forwarded-for'] || req.connection.remoteAddress,
-	   language: req.headers['accept-language'].split(',')[0],
-	   software: req.headers['user-agent'].split('(')[1].split(')')[0],
+	   address: address.split(',')[0],
+	   language: language[0],
+	   software: software,
 	}
 	
 	console.log(req);
